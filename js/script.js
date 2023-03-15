@@ -53,7 +53,7 @@ const { createApp } = Vue
             },
             {
                 text: "Andare alla riunione delle 7",
-                done : true
+                done : false
             },
             {
                 text: "Completare l'esercizio di ieri",
@@ -61,7 +61,7 @@ const { createApp } = Vue
             },
             {
                 text: "Comprare un regalo",
-                done: true
+                done: false
             }
         ],
 
@@ -85,15 +85,35 @@ const { createApp } = Vue
 
         createTodo (){
 
+// creo una variabile da inserire nell'array per far in modo che una volta
+// svuotato newTodo, il text non si svuoti nell'array ma solo nell'input            
             let miaVariabile = this.newTodo
+
+
+
             console.log(miaVariabile)
             this.todos.push(miaVariabile);
+
+
+//dopo aver pushato la variabile nel mio array di todos, rinizializzo newTodo vuoto.            
             this.newTodo = {
                 text: "",
                 done : false
             }
             
 
+        },
+
+
+
+//  BONUS 2- cliccando sul testo dell'item, invertire il valore della proprietà 
+//done del todo corrispondente (se done era uguale a false, 
+//impostare true e viceversa)  
+
+        doneTodo (todoIndex){
+            
+            this.todos[todoIndex].done = !this.todos[todoIndex].done
+            
         }
 
     }

@@ -15,12 +15,18 @@
 
 <h1>COSE DA FARE OGGI</h1>
 
-    <ul>
-        <li v-for="(elemento, indice) in todos" @click="deleteTodo(indice)" :class="elemento.done == true ? 'done' : '' ">{{elemento.text}}  <span>&#10060;</span></li>
+    <ul class="lista">
+        <li v-for="(elemento, indice) in todos" >
+            <span  @click="doneTodo(indice)" :class="elemento.done == true ? 'done' : '' ">{{elemento.text}}</span>  
+            <span @click="deleteTodo(indice)">&#10060;</span>
+        </li>
     </ul>
     <hr>
-    <input type="text" v-model="newTodo.text" @keyup.enter="createTodo()">
-    <button @click="createTodo()">AGGIUNGI</button>
+    <div class="input-container">
+        <input type="text" v-model="newTodo.text" @keyup.enter="createTodo()">
+        <button @click="createTodo()">AGGIUNGI</button>
+    </div>
+
 </div>
 
 
