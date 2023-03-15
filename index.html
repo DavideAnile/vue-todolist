@@ -19,7 +19,7 @@
         <li v-for="(elemento, indice) in todos" @click="deleteTodo(indice)" :class="elemento.done == true ? 'done' : '' ">{{elemento.text}}  <span>&#10060;</span></li>
     </ul>
     <hr>
-    <input type="text" v-model="newTodo.text">
+    <input type="text" v-model="newTodo.text" @keyup.enter="createTodo()">
     <button @click="createTodo()">AGGIUNGI</button>
 </div>
 

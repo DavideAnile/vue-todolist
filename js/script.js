@@ -88,7 +88,10 @@ const { createApp } = Vue
             let miaVariabile = this.newTodo
             console.log(miaVariabile)
             this.todos.push(miaVariabile);
-            this.newTodo = {}
+            this.newTodo = {
+                text: "",
+                done : false
+            }
             
 
         }
