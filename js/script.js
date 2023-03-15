@@ -63,16 +63,37 @@ const { createApp } = Vue
                 text: "Comprare un regalo",
                 done: true
             }
-        ]
+        ],
 
+        newTodo : {
+            text: "",
+            done : false
+        }, 
+
+           
       }
     },
+
+
 
     methods : {
 
         deleteTodo (todoIndex){
-            this.todos.splice(todoIndex, 1)
+            this.todos.splice(todoIndex, 1);
+        },
+
+
+        createTodo (){
+
+            let miaVariabile = this.newTodo
+            console.log(miaVariabile)
+            this.todos.push(miaVariabile);
+            this.newTodo = {}
+            
+
         }
 
     }
+
+    
   }).mount('#app')
