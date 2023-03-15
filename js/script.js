@@ -41,7 +41,38 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
-        message: 'Hello Vue!'
+        
+        todos:[
+            {
+                text: "Andare al supermercato",
+                done: false
+            },
+            {
+                text: "Portare il cane al parco",
+                done: false
+            },
+            {
+                text: "Andare alla riunione delle 7",
+                done : true
+            },
+            {
+                text: "Completare l'esercizio di ieri",
+                done: false
+            },
+            {
+                text: "Comprare un regalo",
+                done: true
+            }
+        ]
+
       }
+    },
+
+    methods : {
+
+        deleteTodo (todoIndex){
+            this.todos.splice(todoIndex, 1)
+        }
+
     }
   }).mount('#app')

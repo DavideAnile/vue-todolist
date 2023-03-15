@@ -13,8 +13,11 @@
 
 <div id="app">
 
-    
+<h1>COSE DA FARE OGGI</h1>
 
+    <ul>
+        <li v-for="(elemento, indice) in todos" @click="deleteTodo(indice)" :class="elemento.done == true ? 'done' : '' ">{{elemento.text}}  <span>&#10060;</span></li>
+    </ul>
 </div>
 
 
